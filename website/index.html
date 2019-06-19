@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+
+<html>
+<head>
+  <style>
+  body {background-color: #f7f7f7;}
+
+  h2 {
+    padding-top: 70px;
+  }
+
+
+  h3 {
+    padding-top: 50px;
+    text-align: center;
+  }
+
+  div.viewport {
+    margin:0 auto;
+    max-width: 1000px;  
+  }
+
+  div.content {
+    background-color: #ffffff;
+    margin:0 auto;
+    padding-top: 100px;
+    padding-right: 7%;
+    padding-bottom: 100px;
+    padding-left: 7%;
+    text-align: center;
+    font-family: verdana, sans-serif;
+  }
+  
+  p {
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+    text-align: left;
+  }
+  
+  p.abstract {
+    text-align: left;
+  }
+  
+  p.authors {
+    text-align: center;
+  }
+  
+  p.abbreviations {
+    font-size: smaller;
+  }
+
+  </style>
+
+  <title>Unsupervised learning of object structure and dynamics from videos - Matthias Minderer</title>
+</head>
+
+<body>
+  <div class="viewport">
+  <div class="content">
+  <h1>Unsupervised learning of object structure and dynamics from videos</h1>
+  <br>
+  <p class="authors">Matthias Minderer<sup>*</sup>, Chen Sun, Ruben Villegas, Forrester Cole, Kevin Murphy, Honglak Lee</p>
+  <br>
+  <p class="authors">
+    Google Research<br><sup>*</sup>Google AI Resident
+  </p>
+  <br>
+
+  <p class="abstract">
+  Extracting and predicting object structure and dynamics from videos without supervision is a major challenge in machine learning. To address this challenge, we adopt a keypoint-based image representation and learn a stochastic dynamics model of the keypoints. Future frames are reconstructed from the keypoints and a reference frame. By modeling dynamics in the keypoint coordinate space, we achieve stable learning and avoid compounding of errors in pixel space. Our method improves upon unstructured representations both for pixel-level video prediction and for downstream tasks requiring object-level understanding of motion dynamics. We evaluate our model on diverse datasets: a multi-agent sports dataset, the Human3.6M dataset, and datasets based on continuous control tasks from the DeepMind Control Suite. The spatially structured representation outperforms unstructured representations on a range of motion-related tasks such as object tracking, action recognition and reward prediction. 
+  </p>
+
+
+  <br>
+  <br>
+  <h1>Supplemental Videos</h1>
+
+  <h2>Video generation quality across models (Human3.6M)</h2>
+
+  <p>
+  Comparison of video generation quality across models. Marker on the left is green for observed frames and red for predicted frames. Columns show different examples.
+  </p>
+  
+  <p class="abbreviations">
+  <b>Abbreviations:</b>
+  <br><b>SVG:</b> Stochastic Video Generation with a Learned Prior (Denton et al., 2018)
+  <br><b>Struct-VRNN:</b> Our full model (structured representation, stochastic dynamics, best-of-many-samples objective).
+  <br><b>CNN-VRNN:</b> Model without structured representation.
+  <br><b>Struct-RNN:</b> Model with deterministic dynamics.
+  </p>
+
+  <video width="100%" height="auto" autoplay loop muted playsinline><source src="videos/human_model_comparison_ex0_width722.0.mp4" type="video/mp4"></video>
+  <br><br>
+  <video width="100%" height="auto" autoplay loop muted playsinline><source src="videos/human_model_comparison_ex10_width722.0.mp4" type="video/mp4"></video>
+  <br><br>
+  <video width="100%" height="auto" autoplay loop muted playsinline><source src="videos/human_model_comparison_ex20_width722.0.mp4" type="video/mp4"></video>
+
+  <h2>Sample diversity (Human3.6M)</h2>
+
+  <p>
+  Videos in the same row were conditioned on the same oberved frames.
+  </p>
+  
+  <p class="abbreviations">
+  <b>Abbreviations:</b>
+  <br><b>Struct-VRNN:</b> Our full model (structured representation, stochastic dynamics, best-of-many-samples objective).
+  <br><b>No BoM:</b> Struct-VRNN without best-of-many-samples objective.
+  </p>
+  
+  <h3>Example 1</h3>
+  <video width="100%" height="auto" autoplay loop muted playsinline><source src="videos/human_sample_diversity_ex0_width722.0.mp4" type="video/mp4"></video>
+  <br><br>
+  <h3>Example 2</h3>
+  <video width="100%" height="auto" autoplay loop muted playsinline><source src="videos/human_sample_diversity_ex10_width722.0.mp4" type="video/mp4"></video>
+  <br><br>
+  <h3>Example 3</h3>
+  <video width="100%" height="auto" autoplay loop muted playsinline><source src="videos/human_sample_diversity_ex20_width722.0.mp4" type="video/mp4"></video>
+  <br><br>
+  <h3>Example 4</h3>
+  <video width="100%" height="auto" autoplay loop muted playsinline><source src="videos/human_sample_diversity_ex30_width722.0.mp4" type="video/mp4"></video>
+  <br><br>
+  <h3>Example 5</h3>
+  <video width="100%" height="auto" autoplay loop muted playsinline><source src="videos/human_sample_diversity_ex40_width722.0.mp4" type="video/mp4"></video>
+  <br><br>
+  <h3>Example 6</h3>
+  <video width="100%" height="auto" autoplay loop muted playsinline><source src="videos/human_sample_diversity_ex50_width722.0.mp4" type="video/mp4"></video>
+  <br><br>
+  <h3>Example 7</h3>
+  <video width="100%" height="auto" autoplay loop muted playsinline><source src="videos/human_sample_diversity_ex60_width722.0.mp4" type="video/mp4"></video>
+  <br><br>
+  <h3>Example 8</h3>
+  <video width="100%" height="auto" autoplay loop muted playsinline><source src="videos/human_sample_diversity_ex70_width722.0.mp4" type="video/mp4"></video>
+  <br><br>
+  <h3>Example 9</h3>
+  <video width="100%" height="auto" autoplay loop muted playsinline><source src="videos/human_sample_diversity_ex80_width722.0.mp4" type="video/mp4"></video>
+  <br><br>
+  <h3>Example 10</h3>
+  <video width="100%" height="auto" autoplay loop muted playsinline><source src="videos/human_sample_diversity_ex90_width722.0.mp4" type="video/mp4"></video>
+  <br><br>
+
+  <h2>Keypoint manipulation (Human3.6M)</h2>
+
+  <p>
+  Keypoints for each limb were manually identified based on the left-most image. Keypoints for a single limb were then manipulated by rotating them around the joint of the limb, while holding the other keypoints static. Columns shows different examples.
+  </p>
+
+  <video width="100%" height="auto" autoplay loop muted playsinline><source src="videos/human_manipulation_width722.0.mp4" type="video/mp4"></video>
+  <br><br>
+
+  <h2>Video generation quality across models (Basketball)</h2>
+
+  <p>
+  Comparison of video generation quality across models. Marker on the left is green for observed frames and red for predicted frames. Each column shows a different example.
+  </p>
+  
+  <p class="abbreviations">
+  <b>Abbreviations:</b>
+  <br><b>SVG:</b> Stochastic Video Generation with a Learned Prior (Denton et al., 2018)
+  <br><b>Struct-VRNN:</b> Our full model (structured representation, stochastic dynamics, best-of-many-samples objective).
+  <br><b>CNN-VRNN:</b> Model without structured representation.
+  <br><b>Struct-RNN:</b> Model with deterministic dynamics.
+  </p>
+
+  <video width="100%" height="auto" autoplay loop muted playsinline><source src="videos/basketball_model_comparison_ex0_width722.0.mp4" type="video/mp4"></video>
+  <br><br>
+  <video width="100%" height="auto" autoplay loop muted playsinline><source src="videos/basketball_model_comparison_ex10_width722.0.mp4" type="video/mp4"></video>
+  <br><br>
+  <video width="100%" height="auto" autoplay loop muted playsinline><source src="videos/basketball_model_comparison_ex20_width722.0.mp4" type="video/mp4"></video>
+  <br><br>
+
+  <h2>Action-conditional video generation quality (DMCS)</h2>
+
+  <p>
+  Video generation quality for the DeepMind Control Suite dataset. A single model was trained on data from all tasks. Columns show different examples.
+  </p>
+
+  <p class="abbreviations">
+  <b>Abbreviations:</b>
+  <br><b>Struct-VRNN:</b> Our full model (structured representation, stochastic dynamics, best-of-many-samples objective).
+  <br><b>CNN-VRNN:</b> Model without structured representation.
+  </p>
+  
+  <h3>Acrobot</h3>
+  <video width="60%" height="auto" autoplay loop muted playsinline><source src="videos/dmcs_model_comparison_acrobot_width392.0.mp4" type="video/mp4"></video>
+  <br><br>
+  <h3>Cartpole</h3>
+  <video width="60%" height="auto" autoplay loop muted playsinline><source src="videos/dmcs_model_comparison_cartpole_width392.0.mp4" type="video/mp4"></video>
+  <br><br>
+  <h3>Cheetah</h3>
+  <video width="60%" height="auto" autoplay loop muted playsinline><source src="videos/dmcs_model_comparison_cheetah_width392.0.mp4" type="video/mp4"></video>
+  <br><br>
+  <h3>Reacher</h3>
+  <video width="60%" height="auto" autoplay loop muted playsinline><source src="videos/dmcs_model_comparison_reacher_width392.0.mp4" type="video/mp4"></video>
+  <br><br>
+  <h3>Walker</h3>
+  <video width="60%" height="auto" autoplay loop muted playsinline><source src="videos/dmcs_model_comparison_walker_width392.0.mp4" type="video/mp4"></video>
+  </div>
+  </div>
+</body>
+</html>
