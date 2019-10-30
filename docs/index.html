@@ -52,6 +52,16 @@
     font-size: smaller;
   }
 
+  p.main_links {
+    font-size: larger;
+    text-align: center;
+  }
+
+  .main_links a:link {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   </style>
 
   <title>Unsupervised learning of object structure and dynamics from videos - Matthias Minderer</title>
@@ -67,7 +77,11 @@
   <p class="authors">
     Google Research<br><sup>*</sup>Google AI Resident
   </p>
-  <br>
+
+  <p class="main_links">
+  <a href=https://arxiv.org/abs/1906.07889 target="_blank">Paper</a>    
+  <a href=https://github.com/google-research/google-research/tree/master/video_structure target="_blank">Code</a>
+  </p>
 
   <p class="abstract">
   Extracting and predicting object structure and dynamics from videos without supervision is a major challenge in machine learning. To address this challenge, we adopt a keypoint-based image representation and learn a stochastic dynamics model of the keypoints. Future frames are reconstructed from the keypoints and a reference frame. By modeling dynamics in the keypoint coordinate space, we achieve stable learning and avoid compounding of errors in pixel space. Our method improves upon unstructured representations both for pixel-level video prediction and for downstream tasks requiring object-level understanding of motion dynamics. We evaluate our model on diverse datasets: a multi-agent sports dataset, the Human3.6M dataset, and datasets based on continuous control tasks from the DeepMind Control Suite. The spatially structured representation outperforms unstructured representations on a range of motion-related tasks such as object tracking, action recognition and reward prediction. 
